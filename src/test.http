@@ -1,0 +1,10 @@
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+  "name": "Test Task",
+  "description": "Task created from .http file"
+}
+
+### getAll
+GET http://localhost:3000/tasks
