@@ -10,6 +10,14 @@ export default class TaskRepository {
     return this.prisma.task.findMany();
   }
 
+  async findById(id: number) {
+    return this.prisma.task.findUnique({
+      where: { id,
+
+      },
+    });
+  }
+
   async delete(id: number) {
     return this.prisma.task.delete({
       where: {
