@@ -34,10 +34,7 @@ export default class EditTaskUseCase
         updatedAt: new Date(), 
       });
     } catch (error) {
-      if (error instanceof BadRequestException) {
-        throw error; 
+        throw new BadRequestException(error.message);
       }
-      throw new InternalServerErrorException('An error occurred while updating the task.');
-    }
   }
 }

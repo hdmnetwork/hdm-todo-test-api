@@ -15,6 +15,6 @@ PATCH  http://localhost:3000/tasks/1
 Content-Type: application/json
 
 {
-  "name": "Modified Task",
+  "name": "",
   "description": "Task modified now"
 }
