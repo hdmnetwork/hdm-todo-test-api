@@ -8,6 +8,7 @@ import {
   Post,
 } from '@nestjs/common';
 import DeleteTask from '../UseCase/DeleteTask/DeleteTask';
+import CreateTask from '../UseCase/CreateTask/CreateTask';
 import GetAllTasksUseCase from '../UseCase/GetAllTasks/GetAllTasksUseCase';
 import SaveTaskDto from '../UseCase/SaveTask/SaveTaskDto';
 import UseCaseFactory from '../UseCase/UseCaseFactory';
@@ -23,7 +24,7 @@ export default class TaskController {
 
   @Post('/tasks')
   async create(@Body() dto: SaveTaskDto) {
-    // @todo YOU MUST FOLLOW THE SAME IMPLEMENTATION AS OTHER ENDPOINTS
+      return (await this.useCaseFactory.create(CreateTask)).handle(dto);
   }
 
   @Patch('/tasks/:id')
